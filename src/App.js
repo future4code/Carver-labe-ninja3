@@ -1,9 +1,28 @@
 import React from 'react'
-import { AppContainer } from './components/AppContainer'
+import { Card } from './components/CardServices/Card'
+import { GrupCards } from './components/CardServices/styledCard'
 
 function App() {
+
+	const mockService = {
+		name: "Limpeza Doméstica",
+		value: 200,
+		date: '20/11/2022'
+	}
+
 	return (
-        <AppContainer />
+
+		<div>
+			<GrupCards>
+				<Card 
+				service={mockService}
+				/>
+			</GrupCards>
+
+
+
+		</div>
+
 	)
 }
 

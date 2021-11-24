@@ -8,7 +8,7 @@ flex-direction: column;
 align-items: center;
 border-radius: 5px;
 width: 100%;
-background-color: #BC8CF2;
+background-color: #EEEEEE;
 
 `
 export const TextCard = styled.div`

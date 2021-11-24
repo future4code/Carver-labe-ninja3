@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-function TelaClienteTeste() {
+export default function TelaClienteTeste() {
     return (
         <div>
           <p>Cliente</p>
@@ -8,7 +8,7 @@ function TelaClienteTeste() {
     )
 }
 
-export default TelaClienteTeste;
+
 
 // export default class TelaClienteTeste extends React.Component {
 

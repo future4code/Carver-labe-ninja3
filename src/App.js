@@ -1,9 +1,9 @@
 import React from 'react'
 import { Card } from './components/CardServices/Card'
 import { GrupCards } from './components/CardServices/styledCard'
-import { TelaHome } from "./Components/TelaHome/TelaHome";
-import { TelaPrestador } from "./Components/TelaPrestador/TelaPrestador";
-import { TelaClienteTeste } from './components/TelaPrestador/TelaClienteTeste';
+import  TelaHome  from "./components/TelaHome/TelaHome";
+import TelaPrestador  from "./components/TelaPrestador/TelaPrestador";
+import  TelaClienteTeste  from './components/TelaPrestador/TelaClienteTeste';
 
 
 export default class App extends React.Component {

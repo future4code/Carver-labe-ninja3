@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from './components/CardServices/Card'
+import { Card } from './components/CardServices/Card.js'
 import { GrupCards } from './components/CardServices/styledCard'
 
 function App() {

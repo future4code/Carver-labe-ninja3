@@ -29,11 +29,11 @@ export default class App extends React.Component {
 	}
   
 	irParaTelaPrestador = () =>{
-	  this.setState({telaAtual: "telaCliente"})
+	  this.setState({telaAtual: "telaPrestador"})
 	}
   
 	irParaTelaCliente = () =>{
-	  this.setState({telaAtual: "telaPrestador"})
+	  this.setState({telaAtual: "telaCliente"})
 	}
   
   

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 
+//Tela inicial com botões para a área de ninjas e área de clientes
 
 export default class TelaHome extends React.Component {
 

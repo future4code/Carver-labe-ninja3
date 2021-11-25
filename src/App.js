@@ -3,7 +3,7 @@ import { Card } from './components/CardServices/Card.js'
 import { GrupCards } from './components/CardServices/styledCard'
 import  TelaHome  from "./components/TelaHome/TelaHome";
 import TelaPrestador  from "./components/TelaPrestador/TelaPrestador";
-import  TelaClienteTeste  from './components/TelaPrestador/TelaClienteTeste';
+import  TelaCliente  from './components/TelaCliente/TelaCliente';
 
 
 export default class App extends React.Component {
@@ -16,7 +16,7 @@ export default class App extends React.Component {
 		case "telaHome":
 		  return <TelaHome irParaTelaPrestador={this.irParaTelaPrestador} irParaTelaCliente={this.irParaTelaCliente}/>
 		case "telaCliente":
-		  return <TelaClienteTeste irParaTelaHome={this.irParaTelaHome}/>
+		  return <TelaCliente irParaTelaHome={this.irParaTelaHome}/>
 		case "telaPrestador":
 		  return <TelaPrestador irParaTelaHome={this.irParaTelaHome}/>
 		default:

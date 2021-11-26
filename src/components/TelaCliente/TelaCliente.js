@@ -7,6 +7,7 @@ import {GrupCards} from '../Card/styledCard'
 // import Filtro from "..Filtro/Filtro";
 
 
+
 export default class TelaCliente extends React.Component {
 
   state = {
@@ -32,9 +33,11 @@ export default class TelaCliente extends React.Component {
       return <Card key={job.id} job={job} irParaTelaDetalheServico={this.props.irParaTelaDetalheServico}/>
     });
 
+
     return (
       <div>
         <Inputs>
+
 
           Valor Minimo:
           <input type={"number"}
@@ -59,6 +62,7 @@ export default class TelaCliente extends React.Component {
 //         <input type={"number"}
 //         value={this.props.maximo}
 //         onChange = {this.props.onChangeMaximo}
+
         
 //         />
 
@@ -71,6 +75,7 @@ export default class TelaCliente extends React.Component {
 
 
         </Inputs>
+
 
         <GrupCards>
           {cardLista}

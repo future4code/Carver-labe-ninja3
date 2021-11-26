@@ -1,9 +1,12 @@
 import React from 'react';
 
-export default class extends React.Component{
+ export default class TelaCliente extends React.Component{
+
+  
   render(){
 
-    return <div>
+    return (
+    <div>
 
         Valor Minimo:
         <input type={"number"}
@@ -26,7 +29,9 @@ export default class extends React.Component{
         />
 
     </div>
+    )
   }
 
 
 }
+ 

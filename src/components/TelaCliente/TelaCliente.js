@@ -29,7 +29,8 @@ export default class TelaCliente extends React.Component {
 
   render() {
     const cardLista = this.state.listJobs.map((job) => {
-      return <Card key={job.id} job={job} irParaTelaDetalheServico={this.props.irParaTelaDetalheServico}/>
+      return <Card key={job.id} job={job} irParaTelaDetalheServico={this.props.irParaTelaDetalheServico}
+      addQuantCarrinho={this.props.addQuantCarrinho}/>
     });
 
     return (
@@ -55,19 +56,7 @@ export default class TelaCliente extends React.Component {
             onChange={this.props.onChangeBuscaPorTitulo}
 
           />
-//         Valor Maximo:
-//         <input type={"number"}
-//         value={this.props.maximo}
-//         onChange = {this.props.onChangeMaximo}
-        
-//         />
 
-//         Busca por titulo:
-//         <input type={"text"}
-//         value={this.props.buscaPorTitulo}
-//         onChange = {this.props.onChangeBuscaPorTitulo}
-        
-//         />
 
 
         </Inputs>

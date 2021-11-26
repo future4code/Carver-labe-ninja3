@@ -1,7 +1,34 @@
 import axios from 'axios'
 import React from 'react'
-import { url, headers } from '../constants/url'
+import styled from 'styled-components'
+import { ListItem } from '@material-ui/core'
 
+
+const Pai = styled.div`
+    margin: 10px;
+`
+
+const Card = styled.div`
+    
+    align-items: center;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #EEEEEE;
+`
+
+const Button = styled.button`
+    height: 35px;
+    width: 120px;
+    border-radius: 10px;
+    background-color: #BC8CF2;
+    border-style: hidden;
+`
 
 
 export default class Carrinho extends React.Component {
@@ -10,127 +37,72 @@ export default class Carrinho extends React.Component {
     }
 
     componentDidMount() {
-        this.pegarListaCarrinho()
+        this.setState({carrinho: this.props.quantCarrinho})
     }
-
-    //PEGA A LISTA ENVIADA AO CARRINHO
-    pegarListaCarrinho = () => {
-        axios.get(url, headers)
-            .then((resposta) => {
-                const selecionados = resposta.data.jobs.filter((job) => { return job.taken === true })
-
-                this.setState({ carrinho: selecionados })
-            })
-            .catch((error) => {
-                alert(error.response.data.error)
-            })
-
-    }
-
-
-    //CALCULA O VALOR DOS ITENS NO CARRINHO
-    totalDoCarrinho = () => {
-        let valor = 0
-        for (let job of this.state.carrinho) {
-            valor += job.price
-
-            return valor.toLocaleString('pt-BR', {
-                style: 'currency',
-                currency: 'BRL'
-            })
-        }
-    }
-
-
-    //REMOVE O ITEM DO CARRINHO
-
-    deletQuantCarrinho = ()=>{
-		this.setState({carrinho: this.state.carrinho - 1})
-	}
-
-    removerServico = (event) => {
-        const urlRemover = `${url}${event.currentTarget.id}`
-        const body = {
-            taken: false,
-        }
-        axios.post(urlRemover, body, headers)
-            .then((resposta) => {
-                this.pegarListaCarrinho()
-                this.props.DeletQuantCarrinho()
-                alert('Removido com sucesso!')
-            })
-            .catch((error) => {
-                alert(error.response.data.error)
-            })
-    }
-
 
     
 
-    //FINALIZA A COMPRA 
 
-    contratar = (carrinho) => {
-        carrinho.forEach((item) => {
-            const urlDel = `${url}/jobs/${item.id}`
+    // CALCULA O VALOR DOS ITENS NO CARRINHO
+    // totalDoCarrinho = () => {
+        
+    //     for (let job of this.state.carrinho) {
+    //         valor += job.price
 
-            axios.delete(urlDel, headers)
-                .then((resposta) => {
-                    alert('Obrigado por contratar com a nossa empresa!')
-                    this.pegarListaCarrinho()
-                })
-                .catch((error) => {
-                    alert(error.response.data.error)
-                })
-        })
-    }
-
+    //         return valor.toLocaleString('pt-BR', {
+    //             style: 'currency',
+    //             currency: 'BRL'
+    //         })
+    //     }
+    // }
 
 
     render() {
 
-        const jobsLista = this.state.carrinho.map((job) => {
+        const jobsLista = this.props.carrinho.map((job) => {
             return (
-                <div key={job.id}>
+                <Pai>
+                <Card key={job.id}>
                     <h2>{job.title}</h2>
-
-                    <div>
                         <p>
-                            {job.price.toLocaleString('pt-BR', {
-                                style: 'currency',
-                                currency: 'BRL',
-                            })}
+                            Valor: {job.price}
                         </p>
-
-                        <button
-                            id={job.id}
-                            onClick={this.removerServico}
+                        <button 
+                            // id={job.id}
+                            onClick={()=>this.props.deletQuantCarrinho(job.id)}
                         >
                             Remover
                         </button>
-                    </div>
-                </div>
+                </Card>
+                </Pai>
             )
         })
 
+        let total = 0
+        this.props.carrinho.forEach((job)=>{
+            total += job.price
+        })
+            
+
         return (
             <div>
-                <button
+                {/* <Button
                     onClick={this.props.irParaTelaCliente}
-                >Voltar
-                </button>
+                >Comprar mais
+                </Button> */}
 
-                {this.state.carrinho.length !== 0 ? (
+                {this.props.carrinho.length > 0 ? (
                     <div>
                         {jobsLista}
                         <div>
-                            <h3>
+                            {/* <h3>
                                 valor Total: <span>{this.totalDoCarrinho()}</span>
-                            </h3>
+                            </h3> */}
+                        
+                            <Button onClick={this.props.compra} >Finalizar Compra
+                            </Button>
 
-                            <button
-                                onClick={() => this.contratar(this.state.carrinho)}>
-                                Contratar Serviço
-                            </button>
+                            <p>Total: {total.toFixed(2)}</p>
                         </div>
                     </div>
                 ) : (
@@ -139,7 +111,6 @@ export default class Carrinho extends React.Component {
                         <h2>Seu carrinho está vazio!</h2>
                     </div>
                 )}
-                Carrinho
             </div>
         )
     }

@@ -13,9 +13,7 @@ export const PagInicial = styled.div`
      
 `
 export const Botoes = styled.div`
- display:flex;
- justify-content:space-between;
-
+ padding: 20px;
 
 `
 

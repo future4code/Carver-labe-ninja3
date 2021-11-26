@@ -5,8 +5,9 @@ export const MainContainer = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
+    height: 50px;
     bottom: 0;
-    position: fixed;
+    position: absolute;
     padding: 20px;
 `
 

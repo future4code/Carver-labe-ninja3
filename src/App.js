@@ -9,13 +9,16 @@ import Footer from './components/Footer/Footer';
 import { createGlobalStyle } from 'styled-components'
 import Header from './components/Header/Header';
 import TelaServicoDetalhes from './components/TelaDetalheServico/TelaServicoDetalhes'
-
+import { ThemeProvider } from 'styled-components';
+import {theme} from './theme'
 
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
 	padding: 0;
 	font-family:Arial, Helvetica, sans-serif;
+	
+
   }
 
 `
@@ -71,6 +74,7 @@ export default class App extends React.Component {
 				return <TelaPrestador irParaTelaHome={this.irParaTelaHome} />
 			case "telaCarrinho":
 				return <Carrinho
+				    addQuantCarrinho={this.state.quantCarrinho}
 					deletQuantCarrinho={this.deletQuantCarrinho} />
 			case "telaDetalheServico":
 				return <TelaServicoDetalhes
@@ -104,12 +108,12 @@ export default class App extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<ThemeProvider theme={theme}>
 				<GlobalStyle />
 				<Header mudarPag={this.mudarPag} />
 				{this.selectPage()}
 				<Footer />
-			</div>
+			</ThemeProvider>
 		);
 	};
 

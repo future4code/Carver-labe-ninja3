@@ -7,21 +7,7 @@ export const MainContainer = styled.div`
     width: 100%;
     bottom: 0;
     position: fixed;
-        
-   
- 
-    @media(max-width: 700px){
-        
-        .logo{
-            display: none;
-        }
-    }
-    @media(max-width: 550px){
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: x-small;
-    }
+    padding: 20px;
 `
 
 export const IconesContainer = styled.div`
@@ -39,10 +25,6 @@ export const TextoFooter = styled.div`
     gap: 20px;
 `
 
-export const IconesRedesSociais = styled.img`
-    height: 5vh;
-    margin: 5px;
-`
 
 export const AlinhaTodos = styled.div `
     display: flex;

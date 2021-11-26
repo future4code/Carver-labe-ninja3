@@ -7,10 +7,8 @@ import axios from 'axios';
   
   render(){
 
-
     return (
     <div>
-
 
         Valor Minimo:
         <input type={"number"}
@@ -39,5 +37,4 @@ import axios from 'axios';
 
 
 }
- 
 

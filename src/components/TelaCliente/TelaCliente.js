@@ -2,11 +2,16 @@ import React from 'react';
 import axios from 'axios';
 // import Filtro from "..Filtro/Filtro";
 
-export default class extends React.Component{
+ export default class TelaCliente extends React.Component{
+
+  
   render(){
-      
-    return <div>
-        
+
+
+    return (
+    <div>
+
+
         Valor Minimo:
         <input type={"number"}
         value={this.props.minimo}
@@ -28,7 +33,11 @@ export default class extends React.Component{
         />
 
     </div>
+    )
   }
 
 
+
 }
+ 
+

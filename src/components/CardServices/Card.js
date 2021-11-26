@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
-import AddAoCarrinho from './img/AddCarinho.png'
+import { Button } from '@material-ui/core'
+/* import axios from 'axios'
+import { headers, url } from '../constants/url' */
 import { CardService, TextCard, Buttons } from './styledCard'
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import IconButton from '@material-ui/core/IconButton';
 
- 
+
+
 
 
 
@@ -22,13 +27,14 @@ export class Card extends Component {
       <div>
         <CardService>
           <TextCard>
-          <p>{this.props.service.name}</p>
-          <p>R${this.props.service.value}</p>
-          <p>Prazo:{this.props.service.date}</p>
+            <p>{this.props.service.name}</p>
+            <p>R${this.props.service.value}</p>
+            <p>Prazo:{this.props.service.date}</p>
           </TextCard>
           <Buttons>
-          <button>Ver detalhes</button>
-          <button onClick={this.props.onclick}><img src={AddAoCarrinho} alt="Adicionar Serviço ao Carrinho" /></button>
+            <Button>Ver detalhes</Button>
+            <IconButton onClick={this.props.onclick}> color="primary" aria-label="add to shopping cart">
+              <AddShoppingCartIcon /></IconButton>
           </Buttons>
         </CardService>
 

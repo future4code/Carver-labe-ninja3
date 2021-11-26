@@ -2,6 +2,8 @@ import axios from 'axios'
 import React from 'react'
 import { url, headers } from '../constants/url'
 
+
+
 export default class Carrinho extends React.Component {
     state = {
         carrinho: []
@@ -42,6 +44,10 @@ export default class Carrinho extends React.Component {
 
     //REMOVE O ITEM DO CARRINHO
 
+    deletQuantCarrinho = ()=>{
+		this.setState({carrinho: this.state.carrinho - 1})
+	}
+
     removerServico = (event) => {
         const urlRemover = `${url}${event.currentTarget.id}`
         const body = {
@@ -50,7 +56,7 @@ export default class Carrinho extends React.Component {
         axios.post(urlRemover, body, headers)
             .then((resposta) => {
                 this.pegarListaCarrinho()
-                this.props.DelQtdCarrinho()
+                this.props.DeletQuantCarrinho()
                 alert('Removido com sucesso!')
             })
             .catch((error) => {
@@ -58,6 +64,8 @@ export default class Carrinho extends React.Component {
             })
     }
 
+
+    
 
     //FINALIZA A COMPRA 
 
@@ -75,9 +83,6 @@ export default class Carrinho extends React.Component {
                 })
         })
     }
-
-
-
 
 
 
@@ -110,7 +115,7 @@ export default class Carrinho extends React.Component {
         return (
             <div>
                 <button
-                    onClick={this.props.BotaoVoltar}
+                    onClick={this.props.irParaTelaCliente}
                 >Voltar
                 </button>
 

@@ -4,6 +4,7 @@ import { Inputs } from './styled';
 import axios from 'axios';
 import { url, headers } from '../constants/url'
 import {GrupCards} from '../Card/styledCard'
+// import Filtro from "..Filtro/Filtro";
 
 
 export default class TelaCliente extends React.Component {
@@ -54,6 +55,20 @@ export default class TelaCliente extends React.Component {
             onChange={this.props.onChangeBuscaPorTitulo}
 
           />
+//         Valor Maximo:
+//         <input type={"number"}
+//         value={this.props.maximo}
+//         onChange = {this.props.onChangeMaximo}
+        
+//         />
+
+//         Busca por titulo:
+//         <input type={"text"}
+//         value={this.props.buscaPorTitulo}
+//         onChange = {this.props.onChangeBuscaPorTitulo}
+        
+//         />
+
 
         </Inputs>
 
@@ -61,7 +76,9 @@ export default class TelaCliente extends React.Component {
           {cardLista}
         </GrupCards>
 
+
       </div>
     )
   }
 }
+

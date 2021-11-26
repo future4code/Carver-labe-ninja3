@@ -19,7 +19,7 @@ export default class App extends React.Component {
     this.filterJobs()
 
   }
-
+// prevProps não aparece em outros lugares?
   componentDidUpdate(prevProps, prevState) {
     if(
       this.state.valorMinimo !== prevState.valorMinimo ||
@@ -69,22 +69,22 @@ export default class App extends React.Component {
 
 }
   // filtrarServicos = () => {
-  //   const pacoteFiltradoMinimo = pacoteServicosNinjas.filter((servico) => {
+  //   const pacoteFiltradoMinimo = this.state.listaServ.filter((servico) => {
   //     if (this.state.valorMinimo) {
-  //       return servico.preco >= this.state.valorMinimo;
+  //       return servico.price >= this.state.valorMinimo;
   //     }
   //   });
 
   //   const pacoteFiltradoMaximo = pacoteFiltradoMinimo.filter((servico) => {
   //     if (this.state.valorMaximo) {
-  //       return servico.preco <= this.state.valorMaximo;
+  //       return servico.price <= this.state.valorMaximo;
   //     } else {
-  //       return servico;
+  //       return false;
   //     }
   //   });
 
   //   const pacoteFiltrado = pacoteFiltradoMaximo.filter((servico) => {
-  //     return servico.titulo.includes(this.state.buscaPorTitulo);
+  //     return servico.titulo.includes(this.state.buscaJobs);
   //   });
   //   return pacoteFiltrado;
   // };

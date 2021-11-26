@@ -19,7 +19,7 @@ export default class Footer extends React.Component {
 
                         <TextoFooter>
                             <p>Contato: labeninjas@gmail.com | (55)55555555</p>
-                            <p> LabeNinjas 3 Somos o maior site de Contratação de Serviços do Brasil </p>
+                            <p> LabeNinjas - Somos o maior site de Contratação de Serviços do Brasil </p>
                         </TextoFooter>
                     </AlinhaTodos>
                 </MainContainer>

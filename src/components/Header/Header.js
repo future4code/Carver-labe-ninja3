@@ -1,9 +1,8 @@
 import React from 'react';
 import { BotoesContainer, HeaderContainer } from './styled';
-/* import LabeninjaLogo from './img/labeninjas.png'
- */import LogoLabe from './img/logo-transparente.png'
+import LogoLabe from './img/logo-transparente.png'
 import { Button } from '@material-ui/core';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import IconButton from '@material-ui/core/IconButton';
 
 const  Header = (props)=> {
@@ -15,12 +14,12 @@ const  Header = (props)=> {
 
                 <HeaderContainer>
 
-                    <Button onClick={() =>props.changePage('telaHome')}><img src={LogoLabe} alt="logo" /></Button>
+                    <Button onClick={() =>props.mudarPag('telaHome')}><img src={LogoLabe} alt="logo" /></Button>
                     <BotoesContainer>
-                        <Button onClick={() =>props.changePage('telaHome')}>HOME</Button>
+                        <Button onClick={() =>props.mudarPag('telaHome')}>HOME</Button>
 
-                        <IconButton onClick={() =>props.changePage('telaCarrinho')} color="White" aria-label="add to shopping cart">
-                            <AddShoppingCartIcon /></IconButton>
+                        <IconButton onClick={() =>props.mudarPag('telaCarrinho')} color="White" aria-label="add to shopping cart">
+                            <ShoppingCartIcon /></IconButton>
                     </BotoesContainer>
                 </HeaderContainer>
 

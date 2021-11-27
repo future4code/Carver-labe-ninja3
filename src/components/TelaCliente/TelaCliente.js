@@ -17,7 +17,7 @@ export default class TelaCliente extends React.Component {
     listJobs: [],
   }
 
-  
+
   componentDidMount() {
     this.getJobs()
   }
@@ -34,7 +34,10 @@ export default class TelaCliente extends React.Component {
 
   render() {
     const cardLista = this.state.listJobs.map((job) => {
-      return <Card key={job.id} job={job} irParaTelaDetalheServico={this.props.irParaTelaDetalheServico} />
+
+      return <Card key={job.id} job={job} irParaTelaDetalheServico={this.props.irParaTelaDetalheServico}
+        addQuantCarrinho={this.props.addQuantCarrinho} />
+
     });
 
 
@@ -55,6 +58,7 @@ export default class TelaCliente extends React.Component {
             value={this.props.minimo}
             onChange={this.props.onChangeMinimo}
             variant="outlined" />
+
           <TextField
             id="outlined-name"
             label="Busca"
@@ -62,24 +66,24 @@ export default class TelaCliente extends React.Component {
             onChange={this.props.onChangeBuscaPorTitulo}
             variant="outlined"
           />
+
           <FormControl>
             <InputLabel id="demo-simple-select-label">Ordenar Por:</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select">
               <MenuItem aria-label="None" value="Crescente">Preço Crescente</MenuItem>
-              <MenuItem aria-label="None"value="Decrescente">Preço Decrescente</MenuItem>
-              <MenuItem aria-label="None"value="Titulo">Titulo</MenuItem>
-              <MenuItem aria-label="None"value="Prazo">Prazo</MenuItem>
+              <MenuItem aria-label="None" value="Decrescente">Preço Decrescente</MenuItem>
+              <MenuItem aria-label="None" value="Titulo">Titulo</MenuItem>
+              <MenuItem aria-label="None" value="Prazo">Prazo</MenuItem>
             </Select>
           </FormControl>
-
         </Inputs>
 
         <GrupCards>
-
           {cardLista}
         </GrupCards>
+        
       </div>
     )
   }

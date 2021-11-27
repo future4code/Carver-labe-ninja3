@@ -11,6 +11,5 @@ palette:{
         main:'#BC8CF2',
         contrastText:'#EEEEEE'
     },
-
 },
 });

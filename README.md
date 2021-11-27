@@ -3,6 +3,7 @@
 Projeto desenvolvido para o curso de Web Full Stack da Labenu, turma *Carver*.
 
 ***Link do Surge***
+zealous-system.surge.sh
  - 
 
 ***Prints***
@@ -11,9 +12,14 @@ Projeto desenvolvido para o curso de Web Full Stack da Labenu, turma *Carver*.
  - Cadastro
  - Serviços
  - Carrinho
- - 
+ - Detalhe
+![image](https://user-images.githubusercontent.com/89935565/143691560-60f2799f-3d48-45bc-85bf-20e197f9fdf8.png)
+![image](https://user-images.githubusercontent.com/89935565/143691566-a8d687d3-e70e-47bc-9420-217b0d848890.png)
+![image](https://user-images.githubusercontent.com/89935565/143691574-3b422e2a-dd49-4f3d-b7f4-90fc514f4c8f.png)
+![image](https://user-images.githubusercontent.com/89935565/143691577-49239af7-481a-4215-8232-44c567592cdb.png)
+![image](https://user-images.githubusercontent.com/89935565/143691580-909ba33c-ff70-4fed-9122-666f3c433556.png)
 
-🚧  Em construção... 🚧
+
 
 Este projeto é uma plataforma de Marketplace: **LabeNinjas**, que está orientada a dois tipos de clientes: 
 

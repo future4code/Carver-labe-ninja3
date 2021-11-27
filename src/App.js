@@ -10,26 +10,22 @@ import { createGlobalStyle } from 'styled-components'
 import Header from './components/Header/Header';
 import TelaServicoDetalhes from './components/TelaDetalheServico/TelaServicoDetalhes'
 import { ThemeProvider } from 'styled-components';
-import {theme} from './theme'
+import { theme } from './theme'
 
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
 	padding: 0;
 	font-family:Arial, Helvetica, sans-serif;
-	
-
   }
-
 `
 export default class App extends React.Component {
 	state = {
 		telaAtual: "telaHome",
 		detalheDoServico: "",
-		quantCarrinho: ''
-		
-	};
+		quantCarrinho: []
 
+	};
 
 	//CARRINHO
 	componentDidMount() {
@@ -37,30 +33,25 @@ export default class App extends React.Component {
 	};
 
 	deletQuantCarrinho = (id) => {
-		const delet = this.state.quantCarrinho.filter(item =>{
-			if (id !== item.id){
-				return item
-			}
-		})
-		this.setState({ quantCarrinho: delet})
+		const removeItem = this.state.quantCarrinho.filter(item => item.id !== id);
+		this.setState({ quantCarrinho: removeItem });
 	};
 
-	compra = () =>{
-		this.setState({quantCarrinho: []})
+	compra = () => {
+		this.setState({ quantCarrinho: [] })
 		alert('Compra finalizada. \nObrigado por comprar conosco!')
 	}
 
 	//MANDAR COMO PROPS PARA O BOTÃO ADICIONAR AO CARRINHO
 
 	addQuantCarrinho = (job) => {
-		const item = {...job, taken: true}
+		const item = { ...job, taken: true }
 		const novaQuant = [...this.state.quantCarrinho, item]
 		this.setState({ quantCarrinho: novaQuant })
 		console.log(this.state.quantCarrinho)
 	};
 
 	/////////
-
 	pegarCarrinho = () => {
 		axios.get(url, headers)
 			.then((resposta) => {
@@ -80,12 +71,15 @@ export default class App extends React.Component {
 			case "telaHome":
 				return <TelaHome irParaTelaPrestador={this.irParaTelaPrestador}
 					irParaTelaCliente={this.irParaTelaCliente} />
+
 			case "telaCliente":
 				return <TelaCliente irParaTelaHome={this.irParaTelaHome}
-				addQuantCarrinho={this.addQuantCarrinho}
+					addQuantCarrinho={this.addQuantCarrinho}
 					irParaTelaDetalheServico={this.irParaTelaDetalheServico} />
+
 			case "telaPrestador":
 				return <TelaPrestador irParaTelaHome={this.irParaTelaHome} />
+				
 			case "telaCarrinho":
 				return <Carrinho
 					compra={this.compra}
@@ -98,7 +92,7 @@ export default class App extends React.Component {
 
 			case "telaDetalheServico":
 				return <TelaServicoDetalhes
-					jobId={this.state.detalheDoServico} 
+					jobId={this.state.detalheDoServico}
 					irParaTelaCliente={this.irParaTelaCliente} />
 
 			default:

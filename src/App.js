@@ -26,8 +26,8 @@ export default class App extends React.Component {
 	state = {
 		telaAtual: "telaHome",
 		detalheDoServico: "",
-		quantCarrinho: 0
-
+		quantCarrinho: ''
+		
 	};
 
 
@@ -36,14 +36,27 @@ export default class App extends React.Component {
 		//this.pegarCarrinho()
 	};
 
-	deletQuantCarrinho = () => {
-		this.setState({ quantCarrinho: this.state.quantCarrinho - 1 })
+	deletQuantCarrinho = (id) => {
+		const delet = this.state.quantCarrinho.filter(item =>{
+			if (id !== item.id){
+				return item
+			}
+		})
+		this.setState({ quantCarrinho: delet})
 	};
+
+	compra = () =>{
+		this.setState({quantCarrinho: []})
+		alert('Compra finalizada. \nObrigado por comprar conosco!')
+	}
 
 	//MANDAR COMO PROPS PARA O BOTÃO ADICIONAR AO CARRINHO
 
-	addQuantCarrinho = () => {
-		this.setState({ quantCarrinho: this.state.quantCarrinho + 1 })
+	addQuantCarrinho = (job) => {
+		const item = {...job, taken: true}
+		const novaQuant = [...this.state.quantCarrinho, item]
+		this.setState({ quantCarrinho: novaQuant })
+		console.log(this.state.quantCarrinho)
 	};
 
 	/////////
@@ -57,7 +70,7 @@ export default class App extends React.Component {
 				this.setState({ quantCarrinho: selecionados.length })
 			})
 			.catch((error) => {
-				alert(error.response.data.message)
+				console.log(error.response.data.message)
 			})
 	};
 
@@ -69,13 +82,20 @@ export default class App extends React.Component {
 					irParaTelaCliente={this.irParaTelaCliente} />
 			case "telaCliente":
 				return <TelaCliente irParaTelaHome={this.irParaTelaHome}
+				addQuantCarrinho={this.addQuantCarrinho}
 					irParaTelaDetalheServico={this.irParaTelaDetalheServico} />
 			case "telaPrestador":
 				return <TelaPrestador irParaTelaHome={this.irParaTelaHome} />
 			case "telaCarrinho":
 				return <Carrinho
-				    addQuantCarrinho={this.state.quantCarrinho}
-					deletQuantCarrinho={this.deletQuantCarrinho} />
+					compra={this.compra}
+					deletQuantCarrinho={this.deletQuantCarrinho}
+					carrinho={this.state.quantCarrinho}
+					irParaTelaCliente={this.irParaTelaCliente} />
+
+			/*	    addQuantCarrinho={this.state.quantCarrinho}
+					deletQuantCarrinho={this.deletQuantCarrinho} /> */
+
 			case "telaDetalheServico":
 				return <TelaServicoDetalhes
 					jobId={this.state.detalheDoServico} 

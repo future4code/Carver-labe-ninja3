@@ -30,7 +30,10 @@ export default class TelaCliente extends React.Component {
 
   render() {
     const cardLista = this.state.listJobs.map((job) => {
-      return <Card key={job.id} job={job} irParaTelaDetalheServico={this.props.irParaTelaDetalheServico} />
+
+      return <Card key={job.id} job={job} irParaTelaDetalheServico={this.props.irParaTelaDetalheServico}
+      addQuantCarrinho={this.props.addQuantCarrinho}/>
+
     });
 
 
@@ -57,6 +60,7 @@ export default class TelaCliente extends React.Component {
             onChange={this.props.onChangeBuscaPorTitulo}
           />
 
+        </Inputs>
 
         <GrupCards>
           {cardLista}

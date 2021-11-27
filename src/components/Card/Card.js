@@ -16,8 +16,8 @@ const Card =(props) => {
               <p>Prazo:{props.job.dueDate}</p>
             </TextCard>
             <Buttons>
-              <Button onClick={() => props.irParaTelaDetalheServico(props.job.id)}>Ver detalhes</Button>
-              <IconButton onClick={() => props.addQuantCarrinho} color="primary" aria-label="add to shopping cart">
+              <Button  onClick={() => props.irParaTelaDetalheServico(props.job.id)}>Ver detalhes</Button>
+              <IconButton onClick={() => props.addQuantCarrinho( props.job)} color="primary" aria-label="add to shopping cart">
                 <AddShoppingCartIcon /></IconButton>
             </Buttons>
           </CardService>

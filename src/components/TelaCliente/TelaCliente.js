@@ -1,10 +1,11 @@
 import React from 'react';
-import Card  from '../Card/Card';
+import Card from '../Card/Card';
 import { Inputs } from './styled';
 import axios from 'axios';
 import { url, headers } from '../constants/url'
-import {GrupCards} from '../Card/styledCard'
+import { GrupCards } from '../Card/styledCard'
 // import Filtro from "..Filtro/Filtro";
+
 
 
 export default class TelaCliente extends React.Component {
@@ -29,13 +30,17 @@ export default class TelaCliente extends React.Component {
 
   render() {
     const cardLista = this.state.listJobs.map((job) => {
+
       return <Card key={job.id} job={job} irParaTelaDetalheServico={this.props.irParaTelaDetalheServico}
       addQuantCarrinho={this.props.addQuantCarrinho}/>
+
     });
+
 
     return (
       <div>
         <Inputs>
+
 
           Valor Minimo:
           <input type={"number"}
@@ -47,17 +52,13 @@ export default class TelaCliente extends React.Component {
           <input type={"number"}
             value={this.props.maximo}
             onChange={this.props.onChangeMaximo}
-
           />
 
           Busca por titulo:
           <input type={"text"}
             value={this.props.buscaPorTitulo}
             onChange={this.props.onChangeBuscaPorTitulo}
-
           />
-
-
 
         </Inputs>
 

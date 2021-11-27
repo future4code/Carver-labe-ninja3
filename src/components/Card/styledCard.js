@@ -51,7 +51,7 @@ display: grid;
 grid-template-columns: repeat(4, 1fr);
 margin: 10px;
 padding: 10px;
-width: 100%;
+width: 98%;
 
 
 

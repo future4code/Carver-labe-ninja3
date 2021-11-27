@@ -5,27 +5,27 @@ import { Button } from '@material-ui/core';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import IconButton from '@material-ui/core/IconButton';
 
-const  Header = (props)=> {
+const Header = (props) => {
 
 
-    
-        return (
-            <div>
 
-                <HeaderContainer>
+    return (
+        <div>
 
-                    <Button onClick={() =>props.mudarPag('telaHome')}><img src={LogoLabe} alt="logo" /></Button>
-                    <BotoesContainer>
-                        <Button onClick={() =>props.mudarPag('telaHome')}>HOME</Button>
+            <HeaderContainer>
 
-                        <IconButton onClick={() =>props.mudarPag('telaCarrinho')} color="White" aria-label="add to shopping cart">
-                            <ShoppingCartIcon /></IconButton>
-                    </BotoesContainer>
-                </HeaderContainer>
+                <Button onClick={() => props.mudarPag('telaHome')}><img src={LogoLabe} alt="logo" /></Button>
+                <BotoesContainer>
+                    <Button onClick={() => props.mudarPag('telaHome')}>HOME</Button>
+                    <IconButton onClick={() => props.mudarPag('telaCarrinho')} color="White" aria-label="add to shopping cart">
+                        <ShoppingCartIcon /></IconButton>
 
-            </div>
-        )
-    
+                </BotoesContainer>
+            </HeaderContainer>
+
+        </div>
+    )
+
 
 }
 export default Header;

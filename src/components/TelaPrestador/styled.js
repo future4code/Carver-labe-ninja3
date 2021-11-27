@@ -3,14 +3,14 @@ import styled from "styled-components";
 
 
 export const PagInicial = styled.div`
-    display: flex;
+      display: flex;
     flex-direction: column;
-    align-content: center;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    gap: 5px;   
-     
+    margin-top: 30px;
+    gap: 5px;
+
+    
 `
 export const FormularioInput = styled.input`
   display: flex;

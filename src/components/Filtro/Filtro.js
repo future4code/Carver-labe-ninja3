@@ -4,8 +4,7 @@ import { url, headers } from '../constants/url';
 import axios from 'axios';
 
 
-
-export default class App extends React.Component {
+export default class Filtro extends React.Component {
   state = {
     valorMinimo: "",
     valorMaximo: "",
@@ -17,7 +16,6 @@ export default class App extends React.Component {
   componentDidMount() {
     this.pegarLista()
     this.filterJobs()
-
   }
   // prevProps não aparece em outros lugares?
   componentDidUpdate(prevProps, prevState) {
@@ -62,8 +60,6 @@ export default class App extends React.Component {
       })
   }
 
-
-
   filtrarServicos = () => {
     const pacoteFiltradoMinimo = this.state.listaServ.filter((servico) => {
       if (this.state.valorMinimo) {
@@ -102,9 +98,6 @@ export default class App extends React.Component {
       </div>
     );
   }
-
-
-
 
 }
 

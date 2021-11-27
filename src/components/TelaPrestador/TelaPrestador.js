@@ -66,7 +66,6 @@ export default class TelaPrestador extends React.Component {
         alert("Oba! Cadastro NINJA realizado com sucesso!")
       })
       .catch((erro) => {
-        console.log(erro)
         alert("Ooops... Parece que algo deu errado, tente novamente mais tarde.")
       })
   }

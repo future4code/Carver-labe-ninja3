@@ -1,68 +1,74 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### LabeNinjasTres
 
-## Available Scripts
+Projeto desenvolvido para o curso de Web Full Stack da Labenu, turma *Carver*.
 
-In the project directory, you can run:
+***Link do Surge***
 
-### `npm start`
+zealous-system.surge.sh
+  
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+***Prints***
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+ - Home
+ - Cadastro
+ - Serviços
+ - Carrinho
+ - Detalhe
+![image](https://user-images.githubusercontent.com/89935565/143691560-60f2799f-3d48-45bc-85bf-20e197f9fdf8.png)
+![image](https://user-images.githubusercontent.com/89935565/143691566-a8d687d3-e70e-47bc-9420-217b0d848890.png)
+![image](https://user-images.githubusercontent.com/89935565/143691574-3b422e2a-dd49-4f3d-b7f4-90fc514f4c8f.png)
+![image](https://user-images.githubusercontent.com/89935565/143691577-49239af7-481a-4215-8232-44c567592cdb.png)
+![image](https://user-images.githubusercontent.com/89935565/143691580-909ba33c-ff70-4fed-9122-666f3c433556.png)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Este projeto é uma plataforma de Marketplace: **LabeNinjas**, que está orientada a dois tipos de clientes: 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ - **Prestador de Servicos** 
+ - **Contratante**
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+***LabeNinjas***, uma startup se destaca pela variedade de serviços apresentados.
+Aqui os prestadores podem oferecer seus serviços livremente, enquanto as pessoas com demandas específicas podem encontrar os serviços de que necessitam.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Temos duas áreas no site, uma destinada à criação dos serviços oferecidos e outra destinada à listagem e busca dessas ofertas. Nessa parte de busca e listagem o usuário pode ver mais detalhes de uma oferta determinada, e decidir se deseja contratá-la, podendo desisitir a qualquer momento.
+Também temos um carrinho onde o usuário pode adicionar todas as propostas que deseja contratar. 
+Cada proposta contém: *titulo, descrição, valor da remuneração, formas de pagamento, prazo*. E além disso na listagem de trabalhos é possível filtrar por *valor mínimo e máximo, e título ou  descrição*, também é possivel ordenar por *título, valor da remuneração e prazo*.
 
-### `npm run eject`
+***Se precisa contratar um serviço ou anunciar, venha para a LabeNinjas: atendimento com qualidade, facilidade e rapidez para todos os tipos de necessidade!***
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ ### 🛠 Tecnologias
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+As seguintes ferramentas foram usadas na construção do projeto:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-   [Materia-Ui](https://v4.mui.com/pt/)
+-   [Node.js](https://nodejs.org/en/)
+-   [React](https://pt-br.reactjs.org/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ ### ✅ Features
 
-## Learn More
+- [x] Cadastro de serviços
+- [x] Carrinho de compras 
+- [x] Busca no site
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+***Autoras***
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ - Eliana Cristina De Deus Santos
+ - Leticia Martins Silva
+ - Luciana Marin Perez
+ - Luiza Gil Almeida Cioffi
+ - Mariana Stefani Santos De Jesus
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
